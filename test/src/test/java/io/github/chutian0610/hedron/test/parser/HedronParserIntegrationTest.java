@@ -94,7 +94,7 @@ public class HedronParserIntegrationTest {
         // Verify that parsing does not throw any exception
         Assertions.assertThatNoException()
                 .as("Failed to parse SQL for engine type %s: %s", engineType, sql)
-                .isThrownBy(() -> parser.parseQuery(sql));
+                .isThrownBy(() -> parser.parseQuery());
     }
 
     /**

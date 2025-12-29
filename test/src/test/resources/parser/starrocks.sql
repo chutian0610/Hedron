@@ -9,3 +9,4 @@ SELECT COUNT(*) FROM users;
 SELECT id FROM users GROUP BY id;
 SELECT * FROM users LIMIT 1;
 SELECT * FROM users ORDER BY name LIMIT 10;
+SELECT * FROM (SELECT * FROM users WHERE age > 20) t;
