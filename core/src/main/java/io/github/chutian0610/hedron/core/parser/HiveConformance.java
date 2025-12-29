@@ -2,99 +2,105 @@ package io.github.chutian0610.hedron.core.parser;
 
 import org.apache.calcite.sql.validate.SqlAbstractConformance;
 
+/**
+ * The conformance of Hive SQL.
+ * <p>
+ * The conformance is used to validate the SQL statement against the Hive SQL
+ * syntax rules.
+ */
 public class HiveConformance extends SqlAbstractConformance {
     public static final HiveConformance INSTANCE = new HiveConformance();
 
-    private HiveConformance() {}
+    private HiveConformance() {
+    }
 
     @Override
     public boolean isLiberal() {
-        return true; // Hive SQL 比较宽松
+        return true;
     }
 
     @Override
     public boolean isGroupByAlias() {
-        return true; // Hive 允许 GROUP BY 别名: SELECT a AS b FROM t GROUP BY b
+        return true;
     }
 
     @Override
     public boolean isGroupByOrdinal() {
-        return true; // Hive 允许 GROUP BY 序号: SELECT a, b FROM t GROUP BY 1, 2
+        return true;
     }
 
     @Override
     public boolean isHavingAlias() {
-        return true; // Hive 允许 HAVING 中使用别名
+        return true;
     }
 
     @Override
     public boolean isSortByOrdinal() {
-        return true; // Hive 允许 ORDER BY 序号
+        return true;
     }
 
     @Override
     public boolean isSortByAlias() {
-        return true; // Hive 允许 ORDER BY 别名
+        return true;
     }
 
     @Override
     public boolean isFromRequired() {
-        return false; // Hive 允许没有 FROM 的子句: SELECT 1, 'test'
+        return false;
     }
 
     @Override
     public boolean isBangEqualAllowed() {
-        return true; // Hive 支持 !=
+        return true;
     }
 
     @Override
     public boolean isMinusAllowed() {
-        return true; // Hive 支持负号
+        return true;
     }
 
     @Override
     public boolean isPercentRemainderAllowed() {
-        return true; // Hive 支持 % 取模
+        return true;
     }
 
     @Override
     public boolean allowNiladicParentheses() {
-        return true; // 允许无参函数带括号: current_date()
+        return true;
     }
 
     @Override
     public boolean allowExplicitRowValueConstructor() {
-        return false; // Hive 不支持 ROW 构造函数
+        return false;
     }
 
     @Override
     public boolean allowExtend() {
-        return false; // Hive 不支持 EXTEND
+        return false;
     }
 
     @Override
     public boolean allowGeometry() {
-        return false; // Hive 不支持几何类型
+        return false;
     }
 
     @Override
     public boolean allowPluralTimeUnits() {
-        return true; // 允许复数时间单位: INTERVAL 2 DAYS
+        return true;
     }
 
     @Override
     public boolean allowQualifyingCommonColumn() {
-        return true; // 允许限定公共列
+        return true;
     }
 
-    // Hive 的 UNION 语法
     @Override
     public boolean allowAliasUnnestItems() {
-        return true; // 允许 UNNEST 项有别名
+        return true;
     }
 
     @Override
     public boolean isValueAllowed() {
-        return true; // 允许 VALUES 子句
+        return true;
     }
 }

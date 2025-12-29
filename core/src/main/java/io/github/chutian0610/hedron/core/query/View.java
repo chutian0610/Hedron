@@ -8,6 +8,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+/**
+ * The view object.
+ * <p>
+ * The view object is used to represent the view statement and the related
+ * information.
+ */
 @Getter
 @Setter
 public class View {
@@ -34,28 +40,29 @@ public class View {
     /**
      * The properties of the view.
      */
-    private Map<String,String> properties;
+    private Map<String, String> properties;
 
-    public Optional<String> getProperty(Property property){
-       if(properties.containsKey(property.getKeyName())){
-           return Optional.of(properties.get(property.getKeyName()));
-       }
-       return property.getDefaultValue();
+    public Optional<String> getProperty(Property property) {
+        if (properties.containsKey(property.getKeyName())) {
+            return Optional.of(properties.get(property.getKeyName()));
+        }
+        return property.getDefaultValue();
     }
 
     public static final String CLUSTER_KEY = "engine.cluster";
 
     @SuppressWarnings("OptionalUsedAsFieldOrParameterType")
     @Getter
-    public enum Property{
+    public enum Property {
         /**
          * The cluster of the view.
          */
-        CLUSTER(CLUSTER_KEY,Optional.empty())
-        ;
+        CLUSTER(CLUSTER_KEY, Optional.empty());
+
         private final String keyName;
         private final Optional<String> defaultValue;
-        Property(String keyName, Optional<String> defaultValue){
+
+        Property(String keyName, Optional<String> defaultValue) {
             this.keyName = keyName;
             this.defaultValue = defaultValue;
         }
