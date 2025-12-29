@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>core</module>
+        <module>test</module>
     </modules>
 
     <properties>
@@ -22,6 +23,7 @@
         <junit.version>5.9.1</junit.version>
         <lombok.version>1.18.22</lombok.version>
         <guava.version>32.1.0-jre</guava.version>
+        <assertj.version>3.25.3</assertj.version>
     </properties>
 
     <dependencyManagement>
@@ -86,6 +88,13 @@
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
                 <version>${guava.version}</version>
+            </dependency>
+            <!-- assertj -->
+            <dependency>
+                <groupId>org.assertj</groupId>
+                <artifactId>assertj-core</artifactId>
+                <version>${assertj.version}</version>
+                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
