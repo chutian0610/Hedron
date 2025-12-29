@@ -1,0 +1,11 @@
+SELECT 1;
+SELECT * FROM users;
+SELECT id FROM users;
+SELECT id, name FROM users;
+SELECT * FROM users WHERE id = 1;
+SELECT * FROM users WHERE id > 0;
+SELECT * FROM users ORDER BY id;
+SELECT COUNT(*) FROM users;
+SELECT id FROM users GROUP BY id;
+SELECT * FROM users LIMIT 1;
+SELECT * FROM users ORDER BY name LIMIT 10;
