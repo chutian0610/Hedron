@@ -1,6 +1,5 @@
 package io.github.chutian0610.hedron.core.parser;
 
-import org.apache.calcite.config.Lex;
 import org.apache.calcite.sql.parser.SqlParser;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
