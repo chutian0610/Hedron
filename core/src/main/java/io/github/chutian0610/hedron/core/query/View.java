@@ -1,12 +1,13 @@
 package io.github.chutian0610.hedron.core.query;
 
-import io.github.chutian0610.hedron.core.util.EngineType;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+
+import io.github.chutian0610.hedron.constant.EngineType;
 
 /**
  * The view object.

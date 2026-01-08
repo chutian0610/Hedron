@@ -1,7 +1,8 @@
 package io.github.chutian0610.hedron.test.parser;
 
+import io.github.chutian0610.hedron.constant.EngineType;
 import io.github.chutian0610.hedron.core.parser.HedronSqlParserFactory;
-import io.github.chutian0610.hedron.core.util.EngineType;
+
 import org.apache.calcite.sql.parser.SqlParser;
 import org.apache.commons.io.IOUtils;
 import org.assertj.core.api.Assertions;

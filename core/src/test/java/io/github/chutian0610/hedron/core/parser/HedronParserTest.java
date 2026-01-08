@@ -4,7 +4,7 @@ import org.apache.calcite.sql.parser.SqlParser;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import io.github.chutian0610.hedron.core.util.EngineType;
+import io.github.chutian0610.hedron.constant.EngineType;
 
 /**
  * The test class for {@link HedronSqlParserFactory}.

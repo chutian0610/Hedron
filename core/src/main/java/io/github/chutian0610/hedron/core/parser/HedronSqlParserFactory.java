@@ -1,10 +1,11 @@
 package io.github.chutian0610.hedron.core.parser;
 
-import io.github.chutian0610.hedron.core.util.EngineType;
 import org.apache.calcite.avatica.util.Casing;
 import org.apache.calcite.avatica.util.Quoting;
 import org.apache.calcite.config.Lex;
 import org.apache.calcite.sql.parser.SqlParser;
+
+import io.github.chutian0610.hedron.constant.EngineType;
 
 /**
  * The Sql Parser Factory of Hedron.
