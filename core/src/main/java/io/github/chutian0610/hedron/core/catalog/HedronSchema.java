@@ -58,7 +58,7 @@ public class HedronSchema extends AbstractSchema {
             .withDatabaseMajorVersion(2)
             .withDatabaseMinorVersion(1));
 
-    public static SqlDialect createDialect(EngineType engineType) {
+    private static SqlDialect createDialect(EngineType engineType) {
         switch (engineType) {
             case STARROCKS:
                 return StarRocksSqlDialect.DEFAULT;

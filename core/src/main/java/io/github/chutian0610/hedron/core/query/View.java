@@ -18,9 +18,14 @@ import io.github.chutian0610.hedron.constant.EngineType;
 @Getter
 @Setter
 public class View {
-
+    /**
+     * The name of the view.
+     */
+    private String name;
+    /**
+     * The type of the view.
+     */
     private ViewType type;
-
     /**
      * The engine type of the view.
      */

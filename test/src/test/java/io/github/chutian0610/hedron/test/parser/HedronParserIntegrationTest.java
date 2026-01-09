@@ -1,7 +1,8 @@
 package io.github.chutian0610.hedron.test.parser;
 
 import io.github.chutian0610.hedron.constant.EngineType;
-import io.github.chutian0610.hedron.core.parser.HedronSqlParserFactory;
+import io.github.chutian0610.hedron.core.HedronContext;
+import io.github.chutian0610.hedron.core.HedronContextConfig;
 
 import org.apache.calcite.sql.parser.SqlParser;
 import org.apache.commons.io.IOUtils;
@@ -89,9 +90,11 @@ public class HedronParserIntegrationTest {
     public void testSqlParsing(TestCase testCase) {
         EngineType engineType = testCase.getEngineType();
         String sql = testCase.getSql();
-
-        SqlParser parser = HedronSqlParserFactory.createSqlParser(sql, engineType);
-
+        HedronContextConfig config = HedronContextConfig.builder()
+                .engineType(engineType)
+                .build();
+        HedronContext context = new HedronContext(config);
+        SqlParser parser = context.createSqlParser(sql);
         // Verify that parsing does not throw any exception
         Assertions.assertThatNoException()
                 .as("Failed to parse SQL for engine type %s: %s", engineType, sql)
